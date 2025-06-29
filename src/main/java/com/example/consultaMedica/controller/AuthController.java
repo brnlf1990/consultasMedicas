@@ -14,7 +14,6 @@ import com.example.consultaMedica.model.Role;
 import com.example.consultaMedica.model.User;
 import com.example.consultaMedica.service.ConsultaService;
 import com.example.consultaMedica.service.UserLog;
-import java.util.Optional;
 
 import jakarta.validation.Valid;
 

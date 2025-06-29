@@ -12,9 +12,9 @@
         <a class="navbar-brand" href="#">Sistema de Consultas</a>
         <div class="d-flex align-items-center ms-auto">
           <ul class="navbar-nav me-3">
-            <li class="nav-item" th:if="${isMedico}">
+            <!-- <li class="nav-item" th:if="${isMedico}">
               <a class="nav-link" th:href="@{/dashboard}">Dashboard</a>
-            </li>
+            </li> -->
             <li class="nav-item" th:if="${!isMedico}">
               <a class="nav-link" th:href="@{/consultas/nova}">Nova Consulta</a>
             </li>

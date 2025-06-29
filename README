@@ -1,6 +1,6 @@
 # Sistema de Consultas Médicas
 
-Este projeto é um sistema web para gerenciamento de consultas médicas, desenvolvido em **Java** com **Spring Boot**, **Spring Security**, **Thymeleaf** e **JPA/Hibernate**.
+Este projeto é um sistema web para gerenciamento de consultas médicas, desenvolvido em **Java** com **Spring Boot**, **Spring Security**, **Thymeleaf** e **JPA/Hibernate**,**Validation**.
 
 ## Funcionalidades
 
@@ -24,27 +24,52 @@ Este projeto é um sistema web para gerenciamento de consultas médicas, desenvo
 ## Como rodar o projeto
 
 1. **Clone o repositório**
+   No prompt execute o comando abaixo na pasta que queira gravar o projeto.
+
    ```bash
-   git clone <url-do-repositorio>
-   cd consultaMedica
+   git clone https://github.com/brnlf1990/consultasMedicas.git
    ```
 
 2. **Configure o banco de dados**  
-   Edite o arquivo `application.properties` para apontar para seu banco.
+    Edite o arquivo application.properties para configurar o banco de dados.
+   Você pode manter o valor padrão jdbc:h2:mem:consultaMedica, que cria um banco de dados em memória automaticamente ao iniciar a aplicação. Caso prefira uma BD persistente mude a linha dbc:h2:mem:consultaMedica por spring.datasource.url=jdbc:h2:file:./data/testdb
+   
+   ![alt text](image.png)
 
 3. **Compile e execute**
+
    ```bash
    ./mvnw spring-boot:run
    ```
+
    ou
+
    ```bash
    mvn spring-boot:run
    ```
+
+   ou em ConsultasApplication.java aperte o botão de play para executar o projeto
+   ![alt text](image-1.png)
 
 4. **Acesse no navegador**
    ```
    http://localhost:8080
    ```
+![alt text](image-2.png)
+5. **Registre o usuário**
+![alt text](image-4.png)
+6. **Faça o login**
+![alt text](image-5.png)
+7. **Se for paciente**
+- **Paciente:** Pode cadastrar, visualizar e cancelar suas próprias consultas.
+![alt text](image-6.png)
+Ao clicar em Nova Consulta, o usuário será redirecionado para uma página de marcação de consulta.
+![alt text](image-7.png)
+Após cria-la o usuário paciente poderá cancelar sua consulta e verificar o estado dela.
+![alt text](image-8.png)
+- **Se for médico**
+    Poderá alterar o estado da consulta e verificar as consultas que estão salvas.
+    ![alt text](image-9.png)
 
 ## Estrutura de Usuários
 
@@ -54,5 +79,12 @@ Este projeto é um sistema web para gerenciamento de consultas médicas, desenvo
 ## Observações
 
 - O campo `username` é único para cada usuário.
+![alt text](image-10.png)
+- A senha é obrigado a ter no mínimo 6 caracteres
+![alt text](image-11.png)
+- Caso usuário ou senha seja invalid, o usuário será notificado
+![alt text](image-12.png)
+- Se o registro for criado com sucesso, o usuário será notificado
+![alt text](image-13.png)
 - O sistema utiliza validação de dados com Jakarta Bean Validation.
-- O projeto já está pronto para ser customizado para outras especialidades médicas ou clínicas.
+
