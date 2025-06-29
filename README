@@ -1,0 +1,58 @@
+# Sistema de Consultas Médicas
+
+Este projeto é um sistema web para gerenciamento de consultas médicas, desenvolvido em **Java** com **Spring Boot**, **Spring Security**, **Thymeleaf** e **JPA/Hibernate**.
+
+## Funcionalidades
+
+- Cadastro e login de usuários (Paciente ou Médico)
+- Controle de acesso por perfil (Paciente vê apenas suas consultas, Médico vê todas)
+- Cadastro de novas consultas
+- Cancelamento e atualização do estado das consultas (Pendente, Concluída, Cancelada)
+- Logout seguro
+- Interface responsiva com Bootstrap
+
+## Tecnologias Utilizadas
+
+- Java 17+
+- Spring Boot
+- Spring Security
+- Spring Data JPA (Hibernate)
+- Thymeleaf
+- Bootstrap 5
+- Banco de dados relacional (ex: PostgreSQL, H2, MySQL)
+
+## Como rodar o projeto
+
+1. **Clone o repositório**
+   ```bash
+   git clone <url-do-repositorio>
+   cd consultaMedica
+   ```
+
+2. **Configure o banco de dados**  
+   Edite o arquivo `application.properties` para apontar para seu banco.
+
+3. **Compile e execute**
+   ```bash
+   ./mvnw spring-boot:run
+   ```
+   ou
+   ```bash
+   mvn spring-boot:run
+   ```
+
+4. **Acesse no navegador**
+   ```
+   http://localhost:8080
+   ```
+
+## Estrutura de Usuários
+
+- **Paciente:** Pode cadastrar, visualizar e cancelar suas próprias consultas.
+- **Médico:** Pode visualizar todas as consultas e alterar o estado delas.
+
+## Observações
+
+- O campo `username` é único para cada usuário.
+- O sistema utiliza validação de dados com Jakarta Bean Validation.
+- O projeto já está pronto para ser customizado para outras especialidades médicas ou clínicas.
